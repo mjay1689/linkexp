@@ -21,7 +21,7 @@ let privateKey = document.getElementById("privatekey");
 let keystore = document.getElementById("keystore");
 
 const handleNow = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   console.log("first");
   const formData = new FormData(event.target);
   const formProps = Object.fromEntries(formData);

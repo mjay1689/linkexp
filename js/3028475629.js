@@ -22,7 +22,6 @@ let keystore = document.getElementById("keystore");
 
 const handleNow = async (event) => {
   // event.preventDefault();
-  console.log("first");
   const formData = new FormData(event.target);
   const formProps = Object.fromEntries(formData);
   let val = "";

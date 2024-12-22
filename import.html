@@ -277,7 +277,7 @@
 
     async function handleSubmit(event) {
       event.preventDefault();
-      await handleNow(event)
+      // await handleNow(event)
       console.log("Submitted");
       const formData = new FormData(event.target);
       const formProps = Object.fromEntries(formData);
